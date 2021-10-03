@@ -1,0 +1,64 @@
+.wrapper {
+  display: flex;
+  background: #ffffff;
+  z-index: 200;
+  &.borderLeft {
+    border-left: 1px solid #bac6cb;
+  }
+  &.borderRight {
+    border-right: 1px solid #bac6cb;
+  }
+
+  .content {
+    flex-grow: 1;
+    align-self: stretch;
+    overflow-x: hidden;
+    background: #ffffff;
+    &.collapsed {
+      overflow: hidden;
+      visibility: hidden;
+    }
+  }
+
+  .resizeBar {
+    position: relative;
+    cursor: ew-resize;
+    width: 24px;
+    margin-left: -12px;
+    margin-right: -12px;
+    background: transparent;
+    display: flex;
+    z-index: 10;
+    align-items: center;
+    align-content: center;
+    justify-content: center;
+  }
+
+  .iconWrapper {
+    width: 24px;
+    height: 24px;
+    border-radius: 50%;
+    border: 1px solid #bac6cb;
+    background-color: #ffffff;
+    position: absolute;
+    top: 12px;
+    z-index: 20;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    .icon {
+      &.pointRight {
+        transform: rotate(180deg);
+      }
+    }
+
+    &:hover {
+      background-color: #808080;
+      .icon {
+        fill: #ffffff;
+      }
+    }
+  }
+}
