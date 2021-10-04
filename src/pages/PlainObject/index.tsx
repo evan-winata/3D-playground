@@ -1,21 +1,24 @@
-import React from 'react';
-import Sidebar from '../../components/Sidebar';
+import React from "react";
+import Sidebar from "../../components/Sidebar";
+import LeftPanel from "./components/LeftPanel";
+import MainPanel from "./components/MainPanel";
+import RightPanel from "./components/RightPanel";
 import classes from "./PlainObject.module.scss";
 
 const PlainObject = () => {
-    return (
-      <div className={classes.wrapper}>
-        <Sidebar position={"left"} maxWidth={400}>
-          <div className={classes.content}>Left Sidebar content here</div>
-          <div className={classes.content}><a href="/">Back to home</a></div>
-        </Sidebar>
-        <div className={classes.content}>Main content here</div>
-        <Sidebar position={"right"} maxWidth={400}>
-          <div className={classes.content}>Right Sidebar content here</div>
-          <div className={classes.content}><a href="/">Back to home</a></div>
-        </Sidebar>
+  return (
+    <div className={classes.wrapper}>
+      <Sidebar position={"left"}>
+        <LeftPanel />
+      </Sidebar>
+      <div className={classes.mainContent}>
+        <MainPanel />
       </div>
-    );
-  };
-  
-  export default PlainObject;
+      <Sidebar position={"right"}>
+        <RightPanel />
+      </Sidebar>
+    </div>
+  );
+};
+
+export default PlainObject;

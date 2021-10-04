@@ -5,11 +5,8 @@
   max-height: 100%;
   max-width: 100%;
   overflow: auto;
-  background: silver;
-  text-align: center;
   
-  .content {
+  .mainContent {
     flex: auto;
-    padding: 20px;
   }
 }
